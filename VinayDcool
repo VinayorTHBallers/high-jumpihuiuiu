@@ -1,0 +1,11 @@
+local function increaseJumpPower(player)
+    player.Character.Humanoid.JumpPower = player.Character.Humanoid.JumpPower + 40
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    player.Chatted:Connect(function(message)
+        if message:lower() == "jump high" then
+            increaseJumpPower(player)
+        end
+    end)
+end)
